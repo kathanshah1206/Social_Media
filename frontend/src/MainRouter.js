@@ -8,7 +8,7 @@ import Profile from "./user/Profile";
 import Users from "./user/Users";
 import Birthdays from "./user/Birthdays";
 import EditProfile from "./user/EditProfile";
-import FindPeople from "./user/FindPeople";
+//import FindPeople from "./user/FindPeople";
 import NewPost from "./post/NewPost";
 import EditPost from "./post/EditPost";
 import SinglePost from "./post/SinglePost";
@@ -18,37 +18,29 @@ import ResetPassword from "./user/ResetPassword";
 import Admin from "./admin/Admin";
 
 const MainRouter = () => (
-    <div>
-        <Menu />
-        <Switch>
-            <Route exact path="/" component={Home} />
-            <PrivateRoute exact path="/admin" component={Admin} />
-            <Route exact path="/forgot-password" component={ForgotPassword} />
-            <Route
-                exact
-                path="/reset-password/:resetPasswordToken"
-                component={ResetPassword}
-            />
-            <PrivateRoute exact path="/post/create" component={NewPost} />
-            <Route exact path="/post/:postId" component={SinglePost} />
-            <PrivateRoute
-                exact
-                path="/post/edit/:postId"
-                component={EditPost}
-            />
-            <Route exact path="/users" component={Users} />
-            <Route exact path="/birthdays" component={Birthdays} />
-            <Route exact path="/signup" component={Signup} />
-            <Route exact path="/signin" component={Signin} />
-            <PrivateRoute
-                exact
-                path="/user/edit/:userId"
-                component={EditProfile}
-            />
-            <PrivateRoute exact path="/findpeople" component={FindPeople} />
-            <PrivateRoute exact path="/user/:userId" component={Profile} />
-        </Switch>
-    </div>
-);
+  <div>
+    <Menu />
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <PrivateRoute exact path="/admin" component={Admin} />
+      <Route exact path="/forgot-password" component={ForgotPassword} />
+      <Route
+        exact
+        path="/reset-password/:resetPasswordToken"
+        component={ResetPassword}
+      />
+      <PrivateRoute exact path="/post/create" component={NewPost} />
+      <Route exact path="/post/:postId" component={SinglePost} />
+      <PrivateRoute exact path="/post/edit/:postId" component={EditPost} />
+      <Route exact path="/users" component={Users} />
+      <Route exact path="/birthdays" component={Birthdays} />
+      <Route exact path="/signup" component={Signup} />
+      <Route exact path="/signin" component={Signin} />
+      <PrivateRoute exact path="/user/edit/:userId" component={EditProfile} />
 
+      <PrivateRoute exact path="/user/:userId" component={Profile} />
+    </Switch>
+  </div>
+);
+// <PrivateRoute exact path="/findpeople" component={FindPeople} />
 export default MainRouter;
