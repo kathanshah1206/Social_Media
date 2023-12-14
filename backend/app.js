@@ -12,7 +12,7 @@ dotenv.config();
 
 // db
 var MONGO_URI =
-  "mongodb+srv://kathan:kathan@cluster0.gljtc1w.mongodb.net/class?retryWrites=true&w=majority";
+  "";//paste your url here directly
 mongoose
   .connect(MONGO_URI, { useNewUrlParser: true })
   .then(() => console.log("DB Connected"));
